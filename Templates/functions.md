@@ -501,3 +501,32 @@ void heapify(int arr[], int n, int i)
     }
 }
 ```
+
+# Sieve Of Erastothenes
+```
+void SieveOfEratosthenes(int n)
+{
+    bool prime[n + 1];
+    memset(prime, true, sizeof(prime));
+ 
+    for (int i = 2; i * i <= n; i++)
+    {
+        
+        if (prime[i])
+        {
+            
+            for (int j = i * i; j <= n; j += i)
+                prime[j] = false;
+        }
+    }
+ 
+    // Printing
+    for (int i = 2; i <= n; i++){
+        if (prime[i]){
+            cout << i << " ";
+	 }
+     }
+}
+ 
+
+```
