@@ -9,15 +9,6 @@ for(int k=1;k<A.size();k++)
 {lsA[k]=lsA[k-1]+A[k];}
 ```
 
-### Suffix/Right Sum Arr
-
-```
-vector<int> rsA(length);
-rsA[length-1]=A[length-1];
-for(int nk=length-2;nk>=0;nk--)
-{rsA[nk]=rsA[nk+1]+A[nk];}
-```
-
 ### Count Less and Equal
 
 ```
@@ -500,4 +491,13 @@ void heapify(int arr[], int n, int i)
         heapify(arr, n, smallest);
     }
 }
+```
+
+### Suffix/Right Sum Arr
+
+```
+vector<int> rsA(length);
+rsA[length-1]=A[length-1];
+for(int nk=length-2;nk>=0;nk--)
+{rsA[nk]=rsA[nk+1]+A[nk];}
 ```
