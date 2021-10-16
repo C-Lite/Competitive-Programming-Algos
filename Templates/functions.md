@@ -18,28 +18,6 @@ for(int nk=length-2;nk>=0;nk--)
 {rsA[nk]=rsA[nk+1]+A[nk];}
 ```
 
-### Count Less and Equal
-
-```
-pair<int,int> count_less_equal(vector<int>A,int num)
-{
-    int e_count=0;
-    int l_count=0;
-    for(int i=0;i<A.size();i++)
-    {
-        if(A[i]<num)
-        {
-            l_count++;
-        }
-        else if(A[i]==num)
-        {
-            e_count++;
-        }
-    }
-    return make_pair(l_count,e_count);
-}
-```
-
 # BINARY SEARCH
 
 ### Count Ocurrence of B
@@ -499,5 +477,28 @@ void heapify(int arr[], int n, int i)
         swap(arr[i], arr[smallest]);
         heapify(arr, n, smallest);
     }
+}
+```
+
+
+### Count Less and Equal
+
+```
+pair<int,int> count_less_equal(vector<int>A,int num)
+{
+    int e_count=0;
+    int l_count=0;
+    for(int i=0;i<A.size();i++)
+    {
+        if(A[i]<num)
+        {
+            l_count++;
+        }
+        else if(A[i]==num)
+        {
+            e_count++;
+        }
+    }
+    return make_pair(l_count,e_count);
 }
 ```
