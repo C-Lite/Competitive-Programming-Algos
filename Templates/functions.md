@@ -344,36 +344,7 @@ void mergesort(ListNode*& A)
     }
 ```
 
-### Binary Tree Level Order Traversal
 
-```
-vector<vector<int>> levelOrder(TreeNode* root)
-{
-        if(root==NULL)  return{};
-        vector<vector<int>> v;
-        queue<TreeNode*> q;
-        q.push(root);
-
-        TreeNode *tempNode=root;
-        while(!q.empty())
-        {
-            int n = q.size();
-            vector<int> ans(n);
-            for(int i=0;i<n;i++)
-            {
-                ans[i]= q.front()->val;
-                // cout<<ans[i]<<endl;
-                if(tempNode->left)  q.push(tempNode->left);
-                if(tempNode->right)  q.push(tempNode->right);
-                q.pop();
-                tempNode=q.front();
-            }
-            v.push_back(ans);
-
-        }
-        return v;
-}
-```
 
 # Max Depth of Binary Tree using top-down approach
 
@@ -499,5 +470,36 @@ void heapify(int arr[], int n, int i)
         swap(arr[i], arr[smallest]);
         heapify(arr, n, smallest);
     }
+}
+```
+
+### Binary Tree Level Order Traversal
+
+```
+vector<vector<int>> levelOrder(TreeNode* root)
+{
+        if(root==NULL)  return{};
+        vector<vector<int>> v;
+        queue<TreeNode*> q;
+        q.push(root);
+
+        TreeNode *tempNode=root;
+        while(!q.empty())
+        {
+            int n = q.size();
+            vector<int> ans(n);
+            for(int i=0;i<n;i++)
+            {
+                ans[i]= q.front()->val;
+                // cout<<ans[i]<<endl;
+                if(tempNode->left)  q.push(tempNode->left);
+                if(tempNode->right)  q.push(tempNode->right);
+                q.pop();
+                tempNode=q.front();
+            }
+            v.push_back(ans);
+
+        }
+        return v;
 }
 ```
