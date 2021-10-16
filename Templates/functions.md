@@ -83,31 +83,6 @@ int OccurenceCount(const vector<int> &A, int B) {
 }
 ```
 
-### Lower Binary Search (Return number of elements less than num)
-
-```
-int lower_bs(int low,int high,vector<int>A, int num)
-{
-    if(A[0]>=num)   return -1;
-    else if(A[A.size()-1]<num)   return A.size();
-    while(low<=high)
-    {
-        int mid = (low+high)/2;
-        if(A[mid]>=num)
-        {
-            if(A[mid-1]<num)    return mid;
-            high = mid-1;
-        }
-        else if(A[mid]<num)
-        {
-            if(A[mid+1]>num)    return mid+1;
-            low = mid+1;
-        }
-    }
-    return -1;
-}
-```
-
 ### Num Lower Binary Search (Return the number just less than num)
 
 ```
@@ -499,5 +474,31 @@ void heapify(int arr[], int n, int i)
         swap(arr[i], arr[smallest]);
         heapify(arr, n, smallest);
     }
+}
+```
+
+
+### Lower Binary Search (Return number of elements less than num)
+
+```
+int lower_bs(int low,int high,vector<int>A, int num)
+{
+    if(A[0]>=num)   return -1;
+    else if(A[A.size()-1]<num)   return A.size();
+    while(low<=high)
+    {
+        int mid = (low+high)/2;
+        if(A[mid]>=num)
+        {
+            if(A[mid-1]<num)    return mid;
+            high = mid-1;
+        }
+        else if(A[mid]<num)
+        {
+            if(A[mid+1]>num)    return mid+1;
+            low = mid+1;
+        }
+    }
+    return -1;
 }
 ```
